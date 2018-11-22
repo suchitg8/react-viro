@@ -3,6 +3,4 @@ target 'ViroSample' do
   use_frameworks!
   pod 'ViroReact', :path => '../node_modules/react-viro/ios/'
   pod 'ViroKit', :path => '../node_modules/react-viro/ios/dist/ViroRenderer/'
-  pod 'RNImageCropPicker', :path => '../node_modules/react-native-image-crop-picker'
-
 end
