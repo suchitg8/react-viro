@@ -108,7 +108,8 @@ export default class ViroSample extends Component {
   _getVRNavigator() {
     return (
       <ViroVRSceneNavigator {...this.state.sharedProps}
-        initialScene={{scene: InitialVRScene}} onExitViro={this._exitViro}/>
+        initialScene={{scene: InitialVRScene}} onExitViro={this._exitViro}
+        vrModeEnabled={false} />
     );
   }
 

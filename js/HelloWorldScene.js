@@ -15,7 +15,9 @@ import {
   ViroNode,
   ViroImage,
   ViroButton,
-  ViroAnimations
+  Viro3DObject,
+  ViroAnimations,
+  ViroAmbientLight
 } from 'react-viro';
 
 
@@ -147,6 +149,8 @@ export default class HelloWorldScene extends Component {
     let videoSrc = this.state.video || videos[0];
     return (
       <ViroScene>
+        <ViroAmbientLight color="#FFFFFF" />
+
         <Viro360Image source={back_source} />
         <ViroText text="Change Image" 
           width={2} height={2} 
@@ -161,6 +165,13 @@ export default class HelloWorldScene extends Component {
           rotation={[0, 90, 0]}
           scale={[2,2,0]} 
           materials={[material]} /> 
+
+        <Viro3DObject source={require('./res/object_cube.vrx')}
+          position={[2, 0, 0]} 
+          rotation={[0, -90, 0]}
+          onDrag={(e, p)=>{ console.log(e, p) }}
+          materials={[material]}
+          type="VRX" />
 
         <ViroText text="Change Video" 
           width={2} height={2} 
